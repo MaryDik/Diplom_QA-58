@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class OrderCard {
-   // SelenideElement heading = $x("//h3[text()");
+    //SelenideElement heading = $x("//h3[text()");
     SelenideElement cardNumber = $x("//*[contains(text(), 'Номер карты')]/../*/input");
     SelenideElement month = $x("//*[contains(text(), 'Месяц')]/../*/input");
     SelenideElement year = $x("//*[contains(text(), 'Год')]/../*/input");
@@ -25,10 +25,10 @@ public class OrderCard {
 
 
 
-    public OrderCard () {
-       // heading.shouldBe(visible);
-      //  heading.shouldHave(text("Оплата по карте"));
-    }
+  //  public OrderCard () {
+     //  heading.shouldBe(visible);
+   //   heading.shouldHave(text("Оплата по карте"));
+  //  }
 
     public void insertCardData(Data.CardInfo cardInfo) {
         cardNumber.setValue(cardInfo.getCardNumber());
