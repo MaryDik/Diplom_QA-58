@@ -44,3 +44,4 @@ out/
 !**/src/main/**
 !**/src/test/**
 !**/documents/**
+!**/gate-simulator/**

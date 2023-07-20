@@ -7,6 +7,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import pages.OrderCard;
 import pages.Start;
+
+import java.sql.SQLException;
+
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,7 +27,7 @@ class OrderCardTests {
     }
 
     @BeforeEach
-    void setUp()  {
+    void setUp() {
         SQL.clearDB();
     }
     @DisplayName("Покупка по карте, со статусом APPROVED")

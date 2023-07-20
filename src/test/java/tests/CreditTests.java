@@ -7,9 +7,9 @@ import data.SQL;
 import pages.Start;
 import pages.Credit;
 import com.codeborne.selenide.logevents.SelenideLogger;
+
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 
 public class CreditTests {
@@ -27,7 +27,7 @@ public class CreditTests {
     }
 
     @BeforeEach
-    void setUp() {
+    void setUp()  {
         SQL.clearDB();
     }
 
@@ -60,7 +60,7 @@ public class CreditTests {
         var creditPage = new Credit();
         creditPage.insertCardData(cardInfo);
         creditPage.requiredFieldNotification();
-        assertNull(SQL.getCreditRequestStatus());
+        assertEquals("0",SQL.getOrderCount());
     }
 
 
