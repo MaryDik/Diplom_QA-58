@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-public class Data{
+public class Data {
     @Value
     public static class CardInfo {
         String cardNumber;
@@ -18,10 +18,12 @@ public class Data{
     }
 
     public static CardInfo getApprovedCard() {
-        return new CardInfo("4444444444444441", "07", "24", "Ivan Sidorov", "545");}
+        return new CardInfo("4444444444444441", "07", "24", "Ivan Sidorov", "545");
+    }
 
     public static CardInfo getDeclinedCard() {
-        return new CardInfo("4444444444444442", "07", "24", "Ivan Sidorov", "545");}
+        return new CardInfo("4444444444444442", "07", "24", "Ivan Sidorov", "545");
+    }
 
 
     public static CardInfo getEmptyCard() {
@@ -32,7 +34,7 @@ public class Data{
         return LocalDate.now().plusMonths(monthCount).format(DateTimeFormatter.ofPattern("MM"));
     }
 
-    public static String getShiftedYear(int yearCount){
+    public static String getShiftedYear(int yearCount) {
         return LocalDate.now().plusYears(yearCount).format(DateTimeFormatter.ofPattern("YY"));
     }
 
@@ -72,12 +74,12 @@ public class Data{
         return new CardInfo("4444444444444441", "13", year, holder, cvv);
     }
 
-    public static CardInfo getCardMonth00ThisYear() {
+    public static CardInfo getCardMonthPreviousToThisYear() {
         Faker faker = new Faker();
         String holder = faker.name().firstName() + " " + faker.name().lastName();
         String year = getShiftedYear(0);
         String cvv = faker.number().digits(3);
-        return new CardInfo("4444444444444441", "00", year, holder, cvv);
+        return new CardInfo("4444444444444441", "06", year, holder, cvv);
     }
 
     public static CardInfo getCardMonth00OverThisYear() {
@@ -159,7 +161,7 @@ public class Data{
         return new CardInfo("4444444444444441", month, year, holder, cvv);
     }
 
-    public static CardInfo getCardHolderNumeric() {
+    public static CardInfo getCardHolderWithNumbers() {
         Faker faker = new Faker();
         String holder = faker.name().firstName() + " " + faker.number().digit();
         String month = getShiftedMonth(1);
@@ -175,16 +177,6 @@ public class Data{
         String year = getShiftedYear(1);
         String cvv = faker.number().digits(3);
         return new CardInfo("4444444444444441", month, year, holder, cvv);
-    }
-
-    public static String generateValidHolder() {
-        Faker faker = new Faker();
-        return faker.name().fullName().toUpperCase();
-    }
-
-    public static String generateValidCVC() {
-        Faker faker = new Faker();
-        return faker.numerify("###");
     }
 
 }

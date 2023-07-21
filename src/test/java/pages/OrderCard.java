@@ -1,34 +1,20 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import data.Data;
 
 import java.time.Duration;
-import java.util.List;
 
-import static com.codeborne.selenide.CollectionCondition.size;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class OrderCard {
-    //SelenideElement heading = $x("//h3[text()");
-    SelenideElement cardNumber = $x("//*[contains(text(), 'Номер карты')]/../*/input");
-    SelenideElement month = $x("//*[contains(text(), 'Месяц')]/../*/input");
-    SelenideElement year = $x("//*[contains(text(), 'Год')]/../*/input");
-    SelenideElement cardHolder = $x("//*[contains(text(), 'Владелец')]/../*/input");
-    SelenideElement cvc = $x("//*[contains(text(), 'CVC/CVV')]/../*/input");
-    SelenideElement button = $x("//*[text()[contains(., 'Продолжить')]]");
-
-
-
-  //  public OrderCard () {
-     //  heading.shouldBe(visible);
-   //   heading.shouldHave(text("Оплата по карте"));
-  //  }
+    private final SelenideElement cardNumber = $x("//*[contains(text(), 'Номер карты')]/../*/input");
+    private final SelenideElement month = $x("//*[contains(text(), 'Месяц')]/../*/input");
+    private final SelenideElement year = $x("//*[contains(text(), 'Год')]/../*/input");
+    private final SelenideElement cardHolder = $x("//*[contains(text(), 'Владелец')]/../*/input");
+    private final SelenideElement cvc = $x("//*[contains(text(), 'CVC/CVV')]/../*/input");
+    private final SelenideElement button = $x("//*[text()[contains(., 'Продолжить')]]");
 
     public void insertCardData(Data.CardInfo cardInfo) {
         cardNumber.setValue(cardInfo.getCardNumber());
