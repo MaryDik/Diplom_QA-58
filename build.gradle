@@ -25,16 +25,15 @@ repositories {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
-    testImplementation 'com.codeborne:selenide:6.12.2'
+    testImplementation 'com.codeborne:selenide:6.13.0'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
-    testImplementation 'io.rest-assured:rest-assured:4.3.0'
-    testImplementation 'com.google.code.gson:gson:2.8.6'
-    testCompileOnly 'org.projectlombok:lombok:1.18.26'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
     testImplementation 'mysql:mysql-connector-java:8.0.30'
     testImplementation 'org.postgresql:postgresql:42.5.1'
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'io.qameta.allure:allure-selenide:2.20.0'
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+
 }
 
 test {
@@ -42,7 +41,7 @@ test {
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
     systemProperty 'db.url', System.getProperty('db.url')
     // Для работы БД mysql по умолчанию необходимо добавить адрес БД следующим образом:
-    // systemProperty 'db.url', System.getProperty('db.url', 'jdbc:mysql://localhost:3306/app')
+    //systemProperty 'db.url', System.getProperty('db.url', 'jdbc:mysql://localhost:3306/app')
     // Для работы БД postgresql по умолчанию необходимо добавить адрес БД следующим образом:
     //systemProperty 'db.url', System.getProperty('db.url', 'jdbc:postgresql://localhost:5432/app')
     systemProperty 'db.user', System.getProperty('db.user', "app")

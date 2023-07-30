@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-public class Data {
+public class DataHelper {
     @Value
     public static class CardInfo {
         String cardNumber;
@@ -17,26 +17,36 @@ public class Data {
         String cvc;
     }
 
-    public static CardInfo getApprovedCard() {
-        return new CardInfo("4444444444444441", "07", "24", "Ivan Sidorov", "545");
-    }
-
-    public static CardInfo getDeclinedCard() {
-        return new CardInfo("4444444444444442", "07", "24", "Ivan Sidorov", "545");
-    }
-
-
-    public static CardInfo getEmptyCard() {
-        return new CardInfo("", "", "", "", "");
-    }
-
     public static String getShiftedMonth(int monthCount) {
         return LocalDate.now().plusMonths(monthCount).format(DateTimeFormatter.ofPattern("MM"));
     }
 
     public static String getShiftedYear(int yearCount) {
-        return LocalDate.now().plusYears(yearCount).format(DateTimeFormatter.ofPattern("YY"));
+        return LocalDate.now().plusYears(yearCount).format(DateTimeFormatter.ofPattern("yy"));
     }
+
+    public static CardInfo getApprovedCard() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth(5);
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new CardInfo("4444444444444441", month, year, holder, cvv);
+    }
+
+    public static CardInfo getDeclinedCard() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth(3);
+        String year = getShiftedYear(2);
+        String cvv = faker.number().digits(3);
+        return new CardInfo("4444444444444442", month, year, holder, cvv);
+    }
+
+    public static CardInfo getEmptyCard() {
+        return new CardInfo("", "", "", "", "");
+    }
+
 
     public static CardInfo getNumberCard15Symbols() {
         Faker faker = new Faker();

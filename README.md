@@ -36,7 +36,7 @@
 2. Выполнить команду: docker-compose up -d
 3. Дождаться сборки контейнеров *
    
-    *_Убедится в сборке контейнеров можно в приложении Docker Desktop или командой в терминале docker-compose ps_
+    * _Убедится в сборке контейнеров можно в приложении Docker Desktop или командой в терминале docker-compose ps_
    
 **Шаг 6. Запуск SUT с подключением к MySQL/PostgreSQL**
 1. В IntelliJ IDEA открыть дополнительную вкладку в терминале кликом по кнопке **+**
@@ -47,7 +47,7 @@
 
 ## Запуск автотестов
 1. В новой вкладке терминала ввести команду в зависимости от выбранной СУБД:
-- ./gradlew test -Ddb.url=jdbc:mysql://localhost:3306/app **(для MySQL)**
+- ./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app" **(для MySQL)**
 - ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app" **(для PostgreSQL)**
 
 ## Создание отчет по результатам тестирования (Allure Report):

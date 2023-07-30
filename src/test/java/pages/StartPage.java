@@ -6,22 +6,22 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Condition.visible;
 
-public class Start {
+public class StartPage {
     private static SelenideElement heading = $(byText("Путешествие дня"));
     private static SelenideElement buyButton = $(byText("Купить"));
     private static SelenideElement creditButton = $(byText("Купить в кредит"));
 
-    public Start() {
+    public StartPage() {
         heading.shouldBe(visible);
     }
 
-    public OrderCard orderCard() {
+    public OrderCardPage goToOrderCardPage() {
         buyButton.click();
-        return new OrderCard();
+        return new OrderCardPage();
     }
 
-    public Credit credit() {
+    public CreditPage goToCreditPage() {
         creditButton.click();
-        return new Credit();
+        return new CreditPage();
     }
 }

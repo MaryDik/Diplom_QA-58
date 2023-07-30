@@ -22,18 +22,18 @@
 Было выполнено 38 автоматизированных тест-кейсов, из них:
 - Успешных (passed): 24 (63.15 %)
 - Неуспешных (failed): 14 (31.58 %)
-- Пропущеных (skipped): 0 (0%)
-- Сломаных(broken): 0 (0%)
+- Пропущенных (skipped): 0 (0%)
+- Сломанных(broken): 0 (0%)
   
 **Отчет по результатам тестирования (Allure Report):**
   
   **Сводный отчёт(_Overview_):**
   ![Allure_1](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/b5adfb25-7ac5-4a96-9e73-dabce3ce5bf3)
 
-  **Отчет CreditTests:**:
+  **Отчет CreditPageTests:**:
   
   ![Allure_CreditTests](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/b86cfad0-67b5-4960-8a84-befe1eb413e4)
-   **Отчет OrderCardTests**:
+   **Отчет OrderCardPageTests**:
 
   ![Allure_OrderCardTests](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/231674cb-c8eb-4d3e-a867-736a363089ba)
 
