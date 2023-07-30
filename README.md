@@ -36,14 +36,14 @@
 2. Во вкладке терминала выполнить команду: docker-compose up -d
 3. Дождаться сборки контейнеров *
    
-  _* Убедиться в сборке контейнеров можно в приложении Docker Desktop или командой в терминале docker-compose ps_
+   _* Убедиться в сборке контейнеров можно в приложении Docker Desktop или командой в терминале docker-compose ps_
    
 **Шаг 6. Запуск SUT с подключением к MySQL/PostgreSQL**
 1. В IntelliJ IDEA открыть дополнительную вкладку в терминале кликом по кнопке **+**
 2. В новой вкладке терминала ввести следующую команду в зависимости от базы данных:
 - java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar **(для MySQL)**
 - java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar  **(для PostgreSQL)**
-3. Приложение должно запуститься работать по адресу http://localhost:8080/
+3. Приложение должно запуститься и работать по адресу http://localhost:8080/
 
 ## Запуск автотестов
 1. В IntelliJ IDEA открыть еще одну дополнительную вкладку в терминале кликом по кнопке **+**
