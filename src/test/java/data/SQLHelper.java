@@ -29,27 +29,25 @@ public class SQLHelper {
 
     @SneakyThrows
     public static String getPaymentStatus() {
-        var codesSQL = "SELECT status FROM payment_entity;";
+        var codesSQL = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1;";
         return getData(codesSQL);
     }
 
     @SneakyThrows
     public static String getCreditRequestStatus() {
-        var codesSQL = "SELECT status FROM credit_request_entity;";
+        var codesSQL = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1;";
         return getData(codesSQL);
     }
 
     @SneakyThrows
     public static String getOrderCount() {
-        Long count;
         var codesSQL = "SELECT COUNT(*) FROM order_entity;";
         var runner = new QueryRunner();
         var conn = DriverManager.getConnection(url, user, password);
-        {
-            count = runner.query(conn, codesSQL, new ScalarHandler<>());
-        }
-        return Long.toString(count);
+        var count = runner.query(conn, codesSQL, new ScalarHandler<>());
+        return String.valueOf(count);
     }
+
 
     @SneakyThrows
     private static String getData(String query) {
