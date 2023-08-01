@@ -15,32 +15,32 @@
 - MySQL
 - PostgreSQL
   
-**_Веб-сервис работает корректно с обеими СУБД._**
+_Веб-сервис работает корректно с обеими СУБД._
 
 ## Статистика успешных/неуспешных кейсов:
 
 Было выполнено 38 автоматизированных тест-кейсов, из них:
-- Успешных (passed): 24 (63.15 %)
-- Неуспешных (failed): 14 (31.58 %)
-- Пропущенных (skipped): 0 (0%)
+- Успешных(passed): 24 (63.15 %)
+- Неуспешных(failed): 14 (36.85 %)
+- Пропущенных(skipped): 0 (0%)
 - Сломанных(broken): 0 (0%)
   
 **Отчет по результатам тестирования (Allure Report):**
   
   **Сводный отчёт(_Overview_):**
-  ![Allure_1](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/b5adfb25-7ac5-4a96-9e73-dabce3ce5bf3)
+ ![Отчет Allure от 30 07 2023 ](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/d4167ca4-3c43-4167-ad56-d4c5bb1bfce1)
+
 
   **Отчет CreditPageTests:**:
-  
-  ![Allure_CreditTests](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/b86cfad0-67b5-4960-8a84-befe1eb413e4)
-   **Отчет OrderCardPageTests**:
+![Allure_CreditPageTests](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/549e8e98-25fa-49e5-81e4-6a9d56fa03a1)
 
-  ![Allure_OrderCardTests](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/231674cb-c8eb-4d3e-a867-736a363089ba)
+   **Отчет OrderCardPageTests**:
+![Allure_OrderCardPageTests](https://github.com/MaryDik/Diplom_QA-58/assets/125306404/7b347613-7fa6-47bf-9680-23c102cbfc5f)
 
 ## Общие рекомендации:
 1. Исправить баги указанные в [Issues](https://github.com/MaryDik/Diplom_QA-58/issues)
-2. Добавить изменение цвета при нажатии на кнопку "Купить" или "Купит в кредит"
-3. Сделать кнопку "Продолжить" неактивной, если есть пустые и/или неправильно заполненные поля
+2. Добавить изменение цвета при нажатии на кнопки _"Купить"_ и _"Купить в кредит"_
+3. Сделать кнопку _"Продолжить"_ неактивной, если есть пустые и/или неправильно заполненные поля
    
 
   
